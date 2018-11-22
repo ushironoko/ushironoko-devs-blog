@@ -1,5 +1,5 @@
 const pkg = require('./package')
-const config = require('./.contentful.json')
+require('dotenv').config()
 
 module.exports = {
   mode: 'spa',
@@ -46,7 +46,8 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Axios module configuration
@@ -62,11 +63,10 @@ module.exports = {
   },
 
   env: {
-    // Contentful configs from .contentful.json
-    CTF_SPACE_ID: config.CTF_SPACE_ID,
-    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
-    CTF_PERSON_ID: config.CTF_PERSON_ID,
-    CTF_BLOG_POST_TYPE_ID: config.CTF_BLOG_POST_TYPE_ID
+    CTF_PERSON_ID: process.env.CTF_PERSON_ID,
+    CTF_BLOG_POST_TYPE_ID: process.env.CTF_BLOG_POST_TYPE_ID,
+    CTF_SPACE_ID: process.env.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: process.env.CTF_CDA_ACCESS_TOKEN,
   },
 
   /*
@@ -76,6 +76,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+   //analyze: true,
     extend(config, ctx) {
 
     }
