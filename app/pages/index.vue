@@ -8,14 +8,16 @@
 import PostPreviews from '~/components/index/PostPreviews.vue'
 import {createClient} from '~/plugins/contentful.js'
 const client = createClient()
+const POSTS_PRE_PAGE = 100
 
 export default {
   asyncData ({env}) {
     return Promise.all([
       client.getEntries({
-        'content_type': env.CTF_BLOG_POST_TYPE_ID,
+        content_type: env.CTF_BLOG_POST_TYPE_ID,
         order: '-fields.publishDate',
-        'limit': 3
+        skip: 0,
+        limit: POSTS_PRE_PAGE
       })
     ]).then(([posts]) => {
       return {

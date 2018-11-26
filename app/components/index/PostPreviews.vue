@@ -1,11 +1,13 @@
 <template>
   <section>
-    <el-card v-for="post in posts" :key="post.fields.id">
-      <div slot="header" class="clearfix">
-        {{ post.fields.title }}
-      </div>
-      <post-preview-body :body="post.fields.body" />
-    </el-card>
+    <div>
+      <el-card v-for="post in posts" :key="post.fields.id">
+        <div slot="header" class="clearfix">
+          {{ post.fields.title }}
+        </div>
+        <post-preview-body :body="post.fields.body" />
+      </el-card>
+    </div>
   </section>
 </template>
 
@@ -18,3 +20,12 @@ export default {
   }
 }
 </script>
+
+<style>
+.pagenation{
+  padding: 16px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+</style>
