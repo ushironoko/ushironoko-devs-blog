@@ -1,7 +1,7 @@
 <template>
   <section>
     <div>
-      <el-card v-for="post in posts" :key="post.fields.id">
+      <el-card>
         <div slot="header" class="clearfix">
           {{ post.fields.title }}
         </div>
@@ -14,18 +14,9 @@
 <script>
 import PostPreviewBody from '~/components/index/PostPreviewBody.vue'
 export default {
-  props: ['posts'],
+  props: ['post'],
   components: {
     PostPreviewBody
   }
 }
 </script>
-
-<style>
-.pagenation{
-  padding: 16px 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-</style>

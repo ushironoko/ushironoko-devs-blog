@@ -1,23 +1,28 @@
 <template>
   <section>
-    <post-previews :posts="posts" />
+    <IndexPosts :posts="posts" />
   </section>
 </template>
 
 <script>
-import PostPreviews from '~/components/index/PostPreviews.vue'
+import IndexPosts from '~/components/index/IndexPosts.vue'
 import {createClient} from '~/plugins/contentful.js'
+
 const client = createClient()
-const POSTS_PRE_PAGE = 100
 
 export default {
   asyncData ({env}) {
+    const select = [
+      'sys.createdAt',
+      'fields.title',
+      'fields.slug',
+      'fields.description'
+    ]
     return Promise.all([
       client.getEntries({
         content_type: env.CTF_BLOG_POST_TYPE_ID,
-        order: '-fields.publishDate',
-        skip: 0,
-        limit: POSTS_PRE_PAGE
+        order: '-sys.createdAt',
+        select: select.join(',')
       })
     ]).then(([posts]) => {
       return {
@@ -26,7 +31,7 @@ export default {
     }).catch(console.error)
   },
   components: {
-    PostPreviews
+    IndexPosts
   }
 }
 </script>
