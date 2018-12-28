@@ -34,8 +34,12 @@ export default {
     height: 275px;
     margin: 0.5vmax 0.5vmax 0.5vmax 0.5vmax;
     overflow: hidden;
-    padding: 35px 0px 0px 15px;
     transition: 0.35s;
     width: 360px;
+  }
+
+  .contents a {
+    width: 100%;
+    padding: 35px 0px 0px 15px;
   }
 </style>
