@@ -1,7 +1,7 @@
 <template>
   <section>
     <div class="contents" v-for="post in posts" :key="post.items">
-      <nuxt-link :to="{ name: 'slug', params: { slug: post.fields.slug }}" style="text-decoration: none; color :black;">
+      <nuxt-link :to="{ name: 'posts-slug', params: { slug: post.fields.slug }}" style="text-decoration: none; color :black;">
         <index-post :post="post" />
       </nuxt-link>
     </div>
