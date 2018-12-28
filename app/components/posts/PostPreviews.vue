@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import PostPreviewBody from '~/components/index/PostPreviewBody.vue'
+import PostPreviewBody from '~/components/posts/PostPreviewBody.vue'
 import dateformat from 'dateformat'
 
 export default {
@@ -39,12 +39,11 @@ export default {
     overflow: hidden;
     padding: 35px 0px 0px 0px;
     transition: 0.35s;
-    max-width: 700px;
+    max-width: 800px;
   }
 
   .title {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 36px;
+    font-size: 30px;
   }
 </style>
 

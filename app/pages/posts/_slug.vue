@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import PostPreviews from '~/components/index/PostPreviews'
+import PostPreviews from '~/components/posts/PostPreviews'
 import {createClient} from '~/plugins/contentful.js'
 
 const client = createClient()
