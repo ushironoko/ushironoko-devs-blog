@@ -39,6 +39,7 @@ export default {
     overflow: hidden;
     padding: 35px 0px 0px 0px;
     transition: 0.35s;
+    width: 100%;
     max-width: 800px;
   }
 
