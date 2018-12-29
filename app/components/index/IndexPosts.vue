@@ -28,8 +28,8 @@ export default {
   .contents {
     flex: 1;
     background: #fff;
-    border: 2px solid #f5f5f5;
-    box-shadow: #e5e5e5 0 5px 5px -3px;
+    border: 1px solid #ececec;
+    box-shadow: #aaa8a8 0 5px 5px -3px;
     display: inline-flex;
     height: 275px;
     margin: 0.5vmax 0.5vmax 0.5vmax 0.5vmax;
@@ -40,6 +40,6 @@ export default {
 
   .contents a {
     width: 100%;
-    padding: 35px 0px 0px 15px;
+    padding: 35px 0px 0px 25px;
   }
 </style>
